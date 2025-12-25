@@ -15,7 +15,12 @@ const adminOrderRoutes = require("./routes/adminOrderRoutes");
 
 const app = express(); // Initialise express app
 app.use(express.json()); // Json data
-app.use(cors()); // To communicate with react server enable cors origin req
+app.use(
+  cors({
+    origin: ["https://gen-z-fashion-frontend.vercel.app"],
+    credentials: true,
+  })
+); // To communicate with react server enable cors origin req
 
 dotenv.config();
 
